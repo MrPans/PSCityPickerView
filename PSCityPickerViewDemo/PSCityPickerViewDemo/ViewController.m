@@ -8,20 +8,39 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+#import "PSCityPickerView.h"
+
+@interface ViewController ()<PSCityPickerViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UITextField *textField;
+@property (strong, nonatomic) PSCityPickerView *cityPicker;
 
 @end
 
 @implementation ViewController
 
-- (void)viewDidLoad {
+#pragma mark - Life cycle
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.textField.inputView = self.cityPicker;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - PSCityPickerViewDelegate
+- (void)cityPickerViewValueChanged
+{
+    [self.textField setText:[NSString stringWithFormat:@"%@ %@ %@",self.cityPicker.province,self.cityPicker.city,self.cityPicker.district]];
+}
+
+#pragma mark - Getter and Setter
+- (PSCityPickerView *)cityPicker
+{
+    if (!_cityPicker)
+    {
+        _cityPicker = [[PSCityPickerView alloc] init];
+        _cityPicker.cityPickerDelegate = self;
+    }
+    return _cityPicker;
 }
 
 @end

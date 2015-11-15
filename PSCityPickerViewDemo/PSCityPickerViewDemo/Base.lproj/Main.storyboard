@@ -16,9 +16,114 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D8s-XD-72G">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y7F-hF-C6y">
+                                        <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请填写城市:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fIU-6O-dTQ">
+                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="90" id="prW-Z7-IqM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.58823529409999997" green="0.58823529409999997" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="prW-Z7-IqM"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="prW-Z7-IqM"/>
+                                            </mask>
+                                        </variation>
+                                    </label>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="LSu-sr-Z0o"/>
+                                    <constraint firstAttribute="trailing" secondItem="Y7F-hF-C6y" secondAttribute="trailing" id="Pru-ml-4Un"/>
+                                    <constraint firstItem="Y7F-hF-C6y" firstAttribute="leading" secondItem="fIU-6O-dTQ" secondAttribute="trailing" constant="8" id="RHi-z6-YDS">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                                    </constraint>
+                                    <constraint firstItem="fIU-6O-dTQ" firstAttribute="leading" secondItem="D8s-XD-72G" secondAttribute="leading" constant="8" id="Sie-vx-Fnb"/>
+                                    <constraint firstItem="Y7F-hF-C6y" firstAttribute="top" secondItem="D8s-XD-72G" secondAttribute="top" id="cPd-9b-dDq"/>
+                                    <constraint firstAttribute="bottom" secondItem="Y7F-hF-C6y" secondAttribute="bottom" id="d22-w3-Kxt"/>
+                                    <constraint firstItem="fIU-6O-dTQ" firstAttribute="centerY" secondItem="D8s-XD-72G" secondAttribute="centerY" id="vM8-0c-1NI"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="Y7F-hF-C6y"/>
+                                        <exclude reference="fIU-6O-dTQ"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="LSu-sr-Z0o"/>
+                                        <exclude reference="Sie-vx-Fnb"/>
+                                        <exclude reference="vM8-0c-1NI"/>
+                                        <exclude reference="Pru-ml-4Un"/>
+                                        <exclude reference="RHi-z6-YDS"/>
+                                        <exclude reference="cPd-9b-dDq"/>
+                                        <exclude reference="d22-w3-Kxt"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="Y7F-hF-C6y"/>
+                                        <include reference="fIU-6O-dTQ"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <include reference="LSu-sr-Z0o"/>
+                                        <include reference="Sie-vx-Fnb"/>
+                                        <include reference="vM8-0c-1NI"/>
+                                        <include reference="Pru-ml-4Un"/>
+                                        <include reference="RHi-z6-YDS"/>
+                                        <include reference="cPd-9b-dDq"/>
+                                        <include reference="d22-w3-Kxt"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="D8s-XD-72G" secondAttribute="trailing" id="Enb-Ks-hXN"/>
+                            <constraint firstItem="D8s-XD-72G" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="60" id="Vca-SA-BNf"/>
+                            <constraint firstItem="D8s-XD-72G" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="f3g-wi-8Z4"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="D8s-XD-72G"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="Enb-Ks-hXN"/>
+                                <exclude reference="Vca-SA-BNf"/>
+                                <exclude reference="f3g-wi-8Z4"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="D8s-XD-72G"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="Enb-Ks-hXN"/>
+                                <include reference="Vca-SA-BNf"/>
+                                <include reference="f3g-wi-8Z4"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="textField" destination="Y7F-hF-C6y" id="m4y-0q-1eE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
