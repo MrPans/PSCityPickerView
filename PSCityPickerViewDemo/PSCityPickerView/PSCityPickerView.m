@@ -19,14 +19,17 @@
 
 @interface PSCityPickerView ()<UIPickerViewDelegate,UIPickerViewDataSource>
 
-@property (nonatomic, strong) NSDictionary *allCityInfo;
 
+@property (nonatomic, copy, readwrite) NSString *province;
+@property (nonatomic, copy, readwrite) NSString *city;
+@property (nonatomic, copy, readwrite) NSString *district;
+
+@property (nonatomic, copy) NSDictionary *allCityInfo;
 @property (nonatomic, copy) NSArray *provinceArr;/**< 省名称数组*/
 @property (nonatomic, copy) NSArray *cityArr;/**< 市名称数组*/
 @property (nonatomic, copy) NSArray *districtArr;/**< 区名称数组*/
-
-@property (nonatomic, strong) NSDictionary *currentProvinceDic;
-@property (nonatomic, strong) NSDictionary *currentCityDic;
+@property (nonatomic, copy) NSDictionary *currentProvinceDic;
+@property (nonatomic, copy) NSDictionary *currentCityDic;
 
 @end
 
@@ -64,17 +67,15 @@
     return 0;
 }
 
-//该方法返回的NSString将作为UIPickerView中指定列、指定列表项上显示的标题
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
 {
-    
-    switch (component)
+    UILabel *titleLabel = (UILabel *)view;
+    if (!titleLabel)
     {
-        case PROVINCE_COMPONENT: return [self.provinceArr objectAtIndex:row];
-        case CITY_COMPONENT:     return [self.cityArr objectAtIndex:row];
-        case DISCTRCT_COMPONENT: return [self.districtArr objectAtIndex:row];
+        titleLabel = [self labelForPickerView];
     }
-    return @"";
+    titleLabel.text = [self titleForComponent:component row:row];
+    return titleLabel;
 }
 
 //选择指定列、指定列表项时激发该方法
@@ -121,9 +122,9 @@
         self.district = [self.districtArr objectAtIndex:row];
     }
     
-    if ([self.cityPickerDelegate respondsToSelector:@selector(cityPickerViewValueChanged)])
+    if ([self.cityPickerDelegate respondsToSelector:@selector(pickerView:viewForRow:forComponent:reusingView:)])
     {
-        [self.cityPickerDelegate cityPickerViewValueChanged];
+        [self.cityPickerDelegate cityPickerView:self finishPickProvince:self.province city:self.city district:self.district];
     }
 }
 
@@ -136,6 +137,25 @@
 
 
 #pragma mark - Private
+- (UILabel *)labelForPickerView
+{
+    UILabel *label = [[UILabel alloc] init];
+    label.textColor = [UIColor colorWithRed:85/255 green:85/255 blue:85/255 alpha:1];
+    label.adjustsFontSizeToFitWidth = YES;
+    return label;
+}
+
+- (NSString *)titleForComponent:(NSInteger)component row:(NSInteger)row;
+{
+    switch (component)
+    {
+        case PROVINCE_COMPONENT: return [self.provinceArr objectAtIndex:row];
+        case CITY_COMPONENT:     return [self.cityArr objectAtIndex:row];
+        case DISCTRCT_COMPONENT: return [self.districtArr objectAtIndex:row];
+    }
+    return @"";
+}
+
 /**
  *  获取省级字典
  *

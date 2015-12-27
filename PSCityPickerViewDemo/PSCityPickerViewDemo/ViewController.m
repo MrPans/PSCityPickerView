@@ -27,9 +27,12 @@
 }
 
 #pragma mark - PSCityPickerViewDelegate
-- (void)cityPickerViewValueChanged
+- (void)cityPickerView:(PSCityPickerView *)picker
+    finishPickProvince:(NSString *)province
+                  city:(NSString *)city
+              district:(NSString *)district
 {
-    [self.textField setText:[NSString stringWithFormat:@"%@ %@ %@",self.cityPicker.province,self.cityPicker.city,self.cityPicker.district]];
+    [self.textField setText:[NSString stringWithFormat:@"%@ %@ %@",province,city,district]];
 }
 
 #pragma mark - Getter and Setter

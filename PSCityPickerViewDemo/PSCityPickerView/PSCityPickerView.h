@@ -11,16 +11,23 @@
 
 @protocol PSCityPickerViewDelegate <NSObject>
 
-- (void)cityPickerViewValueChanged;
+/**
+ *  告诉代理，用户选择了省市区
+ *
+ *  @param picker   picker
+ *  @param province 省
+ *  @param city     市
+ *  @param district 区
+ */
+- (void)cityPickerView:(PSCityPickerView *)picker
+    finishPickProvince:(NSString *)province
+                  city:(NSString *)city
+              district:(NSString *)district;
 
 @end
 
 
 @interface PSCityPickerView : UIPickerView
-
-@property (nonatomic, copy) NSString *province;
-@property (nonatomic, copy) NSString *city;
-@property (nonatomic, copy) NSString *district;
 
 @property (nonatomic, weak) id<PSCityPickerViewDelegate> cityPickerDelegate;
 
