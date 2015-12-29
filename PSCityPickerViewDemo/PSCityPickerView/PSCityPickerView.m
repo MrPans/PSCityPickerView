@@ -122,7 +122,7 @@
         self.district = [self.districtArr objectAtIndex:row];
     }
     
-    if ([self.cityPickerDelegate respondsToSelector:@selector(pickerView:viewForRow:forComponent:reusingView:)])
+    if ([self.cityPickerDelegate respondsToSelector:@selector(cityPickerView:finishPickProvince:city:district:)])
     {
         [self.cityPickerDelegate cityPickerView:self finishPickProvince:self.province city:self.city district:self.district];
     }
@@ -141,6 +141,7 @@
 {
     UILabel *label = [[UILabel alloc] init];
     label.textColor = [UIColor colorWithRed:85/255 green:85/255 blue:85/255 alpha:1];
+    label.textAlignment = NSTextAlignmentCenter;
     label.adjustsFontSizeToFitWidth = YES;
     return label;
 }
