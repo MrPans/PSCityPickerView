@@ -1,5 +1,10 @@
 
 # PSCityPickerView
+
+[![Pod Version](https://img.shields.io/cocoapods/v/PSCityPickerView.svg?style=flat)](http://cocoapods.org/pods/PSCityPickerView)
+[![License](https://img.shields.io/cocoapods/l/PSCityPickerView.svg?style=flat)](http://cocoapods.org/pods/PSCityPickerView) 
+[![Platform](https://img.shields.io/cocoapods/p/PSCityPickerView.svg?style=flat)](http://cocoapods.org/pods/PSCityPickerView)
+
 城市选择器，可以选择国内所有的城市和地区,实现了省、市、区的三级联动.
 
 继承于系统原生控件UIPickerView.你可以像设置任何系统的PickerView一样自定义他的背景颜色等属性。
