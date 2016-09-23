@@ -11,6 +11,8 @@
 
 @protocol PSCityPickerViewDelegate <NSObject>
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  *  告诉代理，用户选择了省市区
  *
@@ -29,6 +31,8 @@
 
 @interface PSCityPickerView : UIPickerView
 
-@property (nonatomic, weak) id<PSCityPickerViewDelegate> cityPickerDelegate;
+@property (nonatomic, weak, nullable) id<PSCityPickerViewDelegate> cityPickerDelegate;
+
+NS_ASSUME_NONNULL_END
 
 @end
