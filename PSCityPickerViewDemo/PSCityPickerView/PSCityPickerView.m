@@ -42,6 +42,8 @@
     {
         self.delegate = self;
         self.dataSource = self;
+        // 第一次进入的时候如果不选, 省 市 区 是nil. 
+        [self pickerView:self didSelectRow:0 inComponent:DISCTRCT_COMPONENT];
     }
     return self;
 }
@@ -89,6 +91,8 @@
         self.cityArr = cityNames;
     
         NSDictionary *cityDic = [self provinceDic:provinceDic cityDicAtIndex:FIRST_INDEX];
+        // 刷新城市
+        self.currentCityDic = cityDic;
         NSArray *districtNames = [self districtArrayInCityDic:cityDic];
         self.districtArr = districtNames;
         
