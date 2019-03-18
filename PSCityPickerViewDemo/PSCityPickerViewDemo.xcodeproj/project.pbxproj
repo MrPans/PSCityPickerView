@@ -15,6 +15,8 @@
 		3BA9D8AA1BF881D7005C162F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BA9D8A81BF881D7005C162F /* LaunchScreen.storyboard */; };
 		3BA9D8B51BF88210005C162F /* city.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3BA9D8B21BF88210005C162F /* city.plist */; };
 		3BA9D8B61BF88210005C162F /* PSCityPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA9D8B41BF88210005C162F /* PSCityPickerView.m */; };
+		EA291756218C37180074A15F /* PSCityPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA291755218C37180074A15F /* PSCityPickerViewController.m */; };
+		EA291759218C38240074A15F /* PSCityHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA291758218C38240074A15F /* PSCityHeaderView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,10 @@
 		3BA9D8B21BF88210005C162F /* city.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = city.plist; sourceTree = "<group>"; };
 		3BA9D8B31BF88210005C162F /* PSCityPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSCityPickerView.h; sourceTree = "<group>"; };
 		3BA9D8B41BF88210005C162F /* PSCityPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSCityPickerView.m; sourceTree = "<group>"; };
+		EA291754218C37180074A15F /* PSCityPickerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSCityPickerViewController.h; sourceTree = "<group>"; };
+		EA291755218C37180074A15F /* PSCityPickerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSCityPickerViewController.m; sourceTree = "<group>"; };
+		EA291757218C38240074A15F /* PSCityHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSCityHeaderView.h; sourceTree = "<group>"; };
+		EA291758218C38240074A15F /* PSCityHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSCityHeaderView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +97,10 @@
 				3BA9D8B21BF88210005C162F /* city.plist */,
 				3BA9D8B31BF88210005C162F /* PSCityPickerView.h */,
 				3BA9D8B41BF88210005C162F /* PSCityPickerView.m */,
+				EA291754218C37180074A15F /* PSCityPickerViewController.h */,
+				EA291755218C37180074A15F /* PSCityPickerViewController.m */,
+				EA291757218C38240074A15F /* PSCityHeaderView.h */,
+				EA291758218C38240074A15F /* PSCityHeaderView.m */,
 			);
 			path = PSCityPickerView;
 			sourceTree = SOURCE_ROOT;
@@ -126,6 +136,7 @@
 				TargetAttributes = {
 					3BA9D8961BF881D7005C162F = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = S3XK7CH324;
 					};
 				};
 			};
@@ -166,8 +177,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA291756218C37180074A15F /* PSCityPickerViewController.m in Sources */,
 				3BA9D8A21BF881D7005C162F /* ViewController.m in Sources */,
 				3BA9D89F1BF881D7005C162F /* AppDelegate.m in Sources */,
+				EA291759218C38240074A15F /* PSCityHeaderView.m in Sources */,
 				3BA9D8B61BF88210005C162F /* PSCityPickerView.m in Sources */,
 				3BA9D89C1BF881D7005C162F /* main.m in Sources */,
 			);
@@ -279,9 +292,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = S3XK7CH324;
 				INFOPLIST_FILE = PSCityPickerViewDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hengtiansoft.PSCityPickerViewDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = net.shengpan.citypicker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -290,9 +304,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = S3XK7CH324;
 				INFOPLIST_FILE = PSCityPickerViewDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hengtiansoft.PSCityPickerViewDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = net.shengpan.citypicker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -316,6 +331,7 @@
 				3BA9D8B01BF881D7005C162F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
